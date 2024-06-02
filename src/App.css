@@ -1,0 +1,53 @@
+.form-container {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-width: 100%;
+}
+span {
+    display: flex;
+    align-items: center;
+}
+span input {
+    margin-right: 4px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 0; /* No border-radius as per requirement */
+}
+
+input[type="submit"] {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0; /* No border-radius as per requirement */
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+}
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+p {
+    text-align: center;
+}
