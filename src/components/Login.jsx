@@ -36,7 +36,7 @@ const Login = () => {
                 response.json().then(res => {
                     // Assuming the response includes a redirect route
                     // navigate(res.redirect);
-                    navigate('/dashboard'); // Navigate to dashboard after login
+                    navigate('/'); // Navigate to dashboard after login
                 });
             }
         } catch (error) {
