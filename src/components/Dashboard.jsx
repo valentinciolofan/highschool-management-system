@@ -1,5 +1,7 @@
 import React from 'react'
 import Menu from './Menu';
+import Stats from './Stats';
+import Actions from './Actions';
 
 const Dashboard = () => {
 
@@ -9,6 +11,8 @@ const Dashboard = () => {
                 <header>
                     <h1>Constantin Brancoveanu Highschool</h1>
                 </header>
+                <Stats />
+                <Actions />
                 <Menu>
                     <p>Dashboard</p>
                     <p>Messages</p>
@@ -19,7 +23,7 @@ const Dashboard = () => {
                     <p>Notifications</p>
                 </Menu>
 
-                
+
 
             </div>
         </>

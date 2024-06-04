@@ -87,3 +87,91 @@ p {
     display: block;
   }
   
+
+  /* stats */
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    max-width: 1000px;
+    padding: 20px 0px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    gap: 20px;
+  }
+  .card {
+    padding: 10px 15px;
+    min-width: 200px;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.199);
+}
+.card div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.card.red {
+    background-color: #EB6751;
+}
+.card.green {
+    background-color: #3CA656;
+}
+.card.blue {
+    background-color: #43C2F1;
+}
+
+
+/* Quick actions */
+
+.quick-actions-container {
+    background-color: #fff;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+.quick-actions-wrapper {
+    min-width: 800px;
+}
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+}
+.action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 30px;
+}
+.action:hover {
+    background-color: #E9E9E9;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Card with data after clicking on action */
+
+.card-with-data {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+}
+.card-with-data-wrapper {
+
+}
+.card-with-data li {
+    list-style-type: none;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .card-with-data {
+        max-width: 1000px;
+    }
+    .card-with-data-wrapper {
+        min-width: 800px;
+    }
+}
