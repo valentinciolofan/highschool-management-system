@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { checkSession } from './utils/fetch';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -11,15 +12,15 @@ const RouterComponent = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user === null) {
-      navigate('/login');
-    }
-  }, [user]);
+    const fetchUserData = async () => await checkSession();
+
+    fetchUserData();
+  }, []);
 
   return (
 
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard user={user}/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

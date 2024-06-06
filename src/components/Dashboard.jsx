@@ -3,35 +3,35 @@ import Menu from './Menu';
 import Stats from './Stats';
 import Actions from './Actions';
 
-const Dashboard = () => {
+const Dashboard = ({ user }) => {
+    const [role, setRole] = useState(null);
     const [data, setData] = useState(null);
     const [exams, setExams] = useState(null);
-
 
     useEffect(() => {
         const getData = async () => {
             const data = await fetch('http://www.localhost:3000/students')
             const studentsInfo = await data.json();
-
+        
             setData(studentsInfo);
-
-
+        
             const getExams = await fetch('http://www.localhost:3000/exams');
             const exams = await getExams.json();
-
+        
             setExams(exams);
         }
         getData();
     }, [])
-
+    console.log(user);
     return (
-            <div>
+            <div className='dashboard'>
                 <header>
                     <h1>Constantin Brancoveanu Highschool</h1>
                 </header>
                 <Stats />
                 <Actions data={data} exams={exams}/>
                 <Menu>
+
                     <p>Dashboard</p>
                     <p>Messages</p>
                     <p>My classes</p>

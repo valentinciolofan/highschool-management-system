@@ -165,7 +165,12 @@ p {
 .card-with-data li {
     list-style-type: none;
 }
-
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 @media screen and (min-width: 1024px) {
     .card-with-data {
@@ -217,5 +222,19 @@ tr:hover {
     table {
         display: block;
         overflow-x: auto; /* Allows table to scroll horizontally on small devices */
+    }
+}
+@media print {
+    body * {
+        visibility: hidden; /* Hide everything in the body when printing... */
+    }
+    #printableArea, #printableArea * {
+        visibility: visible; /* ...except the printableArea and everything inside it */
+    }
+    #printableArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%; /* Use the full width */
     }
 }

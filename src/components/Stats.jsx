@@ -12,7 +12,6 @@ const Stats = () => {
         }
         getStats();
     }, [])
-    console.log(status);
     return (
         <div className='cards'>
 
