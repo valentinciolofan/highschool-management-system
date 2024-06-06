@@ -175,3 +175,47 @@ p {
         min-width: 800px;
     }
 }
+
+
+
+
+/* table style */
+
+/* General styles for the table */
+table {
+    min-width: 800px;            /* Full-width table */
+    border-collapse: collapse; /* Collapses the border */
+    margin-top: 20px;       /* Adds space above the table */
+    background-color: #f9f9f9; /* Light grey background for readability */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Styling table headers */
+th {
+    background-color: #4CAF50; /* A nice green background */
+    color: white;             /* White text color */
+    text-align: left;         /* Aligns text to the left */
+    padding: 12px 15px;       /* Adds space around text */
+    border-bottom: 1px solid #ddd; /* Bottom border for each header */
+    cursor: default;
+}
+
+/* Styling each cell in the table */
+td {
+    padding: 12px 15px;       /* Padding around cell content */
+    border-bottom: 1px solid #ddd; /* Light grey border for each cell */
+}
+
+/* Hover effect for each row */
+tr:hover {
+    background-color: #f1f1f1; /* Light grey background on hover */
+    cursor: pointer;
+}
+
+/* Responsive table adjustments */
+@media screen and (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto; /* Allows table to scroll horizontally on small devices */
+    }
+}
