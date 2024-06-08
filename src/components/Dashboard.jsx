@@ -21,17 +21,21 @@ const Dashboard = ({ user }) => {
             setExams(exams);
         }
         getData();
+    
+        setRole('admin');
     }, [])
-    console.log(user);
+
     return (
             <div className='dashboard'>
                 <header>
                     <h1>Constantin Brancoveanu Highschool</h1>
+                    
                 </header>
                 <Stats />
-                <Actions data={data} exams={exams}/>
+                <Actions data={data} exams={exams} role={role}/>
                 <Menu>
-
+                    {user ? user.email : ''}
+                    {/* {user ? user[0].calitate : ''} */}
                     <p>Dashboard</p>
                     <p>Messages</p>
                     <p>My classes</p>
