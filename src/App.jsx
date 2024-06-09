@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
-// import { checkSession } from './utils/fetch';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -8,7 +7,8 @@ import './App.css'
 
 
 const RouterComponent = () => {
-  const [user, setUser] = useState(null);
+  const [userEmail, setUserEmail] = useState(null);
+  const [role, setRole] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,16 +24,17 @@ const RouterComponent = () => {
           const {loggedIn, status, userInfo} = await response.json();
           
           if (loggedIn && status === 200 && userInfo !== undefined) {
-              setUser(userInfo);
+              setUserEmail(userInfo.email);
+              setRole(userInfo.calitate);
           } else {
-              setUser(null);
-              if (user === null) {
+              setUserEmail(null);
+              if (userEmail === null) {
                 navigate('/login');
               }
           }
       } catch (error) {
           console.log('Fetch failed, check the reason:', error);
-          setUser(null);
+          setUserEmail(null);
       }
   }
     const fetchUserData = async () => await checkSession();
@@ -44,7 +45,7 @@ const RouterComponent = () => {
   return (
 
       <Routes>
-        <Route path="/" element={<Dashboard user={user}/>} />
+        <Route path="/" element={<Dashboard userEmail={userEmail} role={role}/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

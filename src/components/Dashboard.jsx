@@ -3,8 +3,7 @@ import Menu from './Menu';
 import Stats from './Stats';
 import Actions from './Actions';
 
-const Dashboard = ({ user }) => {
-    const [role, setRole] = useState(null);
+const Dashboard = ({ userEmail, role }) => {
     const [data, setData] = useState(null);
     const [exams, setExams] = useState(null);
 
@@ -21,9 +20,11 @@ const Dashboard = ({ user }) => {
             setExams(exams);
         }
         getData();
-    
-        setRole('admin');
+
+        
+
     }, [])
+  console.log(role);
 
     return (
             <div className='dashboard'>
@@ -32,9 +33,9 @@ const Dashboard = ({ user }) => {
                     
                 </header>
                 <Stats />
-                <Actions data={data} exams={exams} role={role}/>
+                <Actions data={data} exams={exams} userEmail={userEmail} role={role}/>
                 <Menu>
-                    {user ? user.email : ''}
+                    {/* {user ? user.email : ''} */}
                     {/* {user ? user[0].calitate : ''} */}
                     <p>Dashboard</p>
                     <p>Messages</p>
